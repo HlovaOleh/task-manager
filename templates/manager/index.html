@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="title">Premium Task Manager</h1>
+  <h4 class="title">Learn about number of our users:</h4>
+  <ul>
+    <li class="info">Number of workers: {{ workers_count }}</li>
+    <li class="info">Number of tasks: {{ task_count }}</li>
+    <li class="info">Number of task types: {{ task_type_count }}</li>
+    <li class="info">Number of positions: {{ position_count }}</li>
+  </ul>
+{% endblock %}

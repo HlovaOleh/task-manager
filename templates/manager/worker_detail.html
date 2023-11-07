@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ worker.first_name }} {{ worker.last_name }}</h1>
+  <p><span class="bold">Worker position:</span> {{ worker.position }}</p>
+  {% if car_list %}
+    <p><span class="bold">Tasks:</span></p>
+        {% for task in task_list %}
+          <div class="card">
+            <p><span class="bold">task:</span> <a href="{% url 'manager:task-detail' task.pk %}">{{ task.name }}</a></p>
+          </div>
+        {% endfor %}
+  {% else %}
+    <p>Doesn't own any tasks</p>
+  {% endif %}
+{% endblock content %}

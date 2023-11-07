@@ -1,17 +1,4 @@
-<ul class="sidebar-nav">
-  <li>
-    <a href="{% url 'manager:index' %}" class="nav__link">Home page</a>
-  </li>
-  <li>
-    <a href="#" class="nav__link">Tasks</a>
-  </li>
-  <li>
-    <a href="#" class="nav__link">Task types</a>
-  </li>
-  <li>
-    <a href="#" class="nav__link">Worker</a>
-  </li>
-  <li>
-    <a href="#" class="nav__link">Positions</a>
-  </li>
-</ul>
+<div class="sidebar">
+  <a class="sidebar__link" href="{% url 'manager:task-list' %}">Home page</a>
+  <a class="sidebar__link" href="{% url 'manager:worker-list' %}">Workers</a>
+</div>

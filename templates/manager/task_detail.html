@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ task.name }}</h1>
+  <p><span class="bold">Description: </span>{{ task.description }}</p>
+  <p><span class="bold">Workers: </span></p>
+  {% for worker in task.assignees.all %}
+    <div class="card">
+      <p><span class="bold">Worker name: </span><a href="{% url 'manager:worker-detail' worker.pk %}"> {{ worker.first_name }} {{ worker.last_name }}</a></p>
+      <p><span class="bold">Position: </span>{{ worker.position }}</p>
+    </div>
+  {% empty %}
+    <p>There are no workers</p>
+  {% endfor %}
+{% endblock %}

@@ -1,4 +1,10 @@
-<div class="sidebar">
-  <a class="sidebar__link" href="{% url 'manager:task-list' %}">Home page</a>
-  <a class="sidebar__link" href="{% url 'manager:worker-list' %}">Workers</a>
-</div>
+<ul class="sidebar-nav">
+  {% if user.is_authenticated %}
+    <li>User: <a href="{% url 'manager:worker-detail' pk=user.id %}">{{ user.username }}</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+  {% else %}
+    <li><a href="{% url 'login' %}">Login</a></li>
+  {% endif %}
+  <li><a href="{% url "manager:task-list" %}">Home page</a></li>
+  <li><a href="{% url "manager:worker-list" %}">Worker</a></li>
+</ul>

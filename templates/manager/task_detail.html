@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
   <h1>{{ task.name }}</h1>
+  <a href="{% url 'manager:task-update' task.pk %}" class="btn btn-warning">Update</a>
+  <a href="{% url 'manager:task-delete' task.pk %}" class="btn btn-danger">Delete</a>
   <p><span class="bold">Description: </span>{{ task.description }}</p>
   <p><span class="bold">Workers: </span></p>
   {% for worker in task.assignees.all %}
